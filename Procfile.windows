@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar target\android-server-demo.war
+web: java $JAVA_OPTS -jar target\auth-api.jar
