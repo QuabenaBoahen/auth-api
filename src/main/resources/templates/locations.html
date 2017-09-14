@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <title>SpotAm Android Server</title>
+        <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css' />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link rel="stylesheet" th:href="@{/fonts/fa/css/font-awesome.min.css}"/>
+        <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+        <link rel="stylesheet" th:href="@{/css/normalize.css}" />
+        <link rel="stylesheet" th:href="@{/css/site.css}" />
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="site-header">
+                    <a class="logo" href="index.html" th:href="@{/}">SpotAm Web Service </a>
+                </div>
+            </div>
+        </header>
+        <div class="container wrapper">
+        <div class="col-md-12">
+        <nav >
+            <ul>
+                <li class="selected"><a href="index.html" th:href="@{/}">Saved Locations</a></li>
+            </ul>
+        </nav>
+        </div>
+        <section>
+                <div class="project-list">
+                    <div class="project table-responsive" >
+                    <table class="table table-striped">
+                    <thead>
+                    <tr>
+                    <th>Location ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="location : ${allLocations}">
+                    <td th:text="${location.id}"></td>
+                    <td th:text="${location.title}"></td>
+                    <td th:text="${location.description}"></td>
+                    <td th:text="${location.latitude}"></td>
+                    <td th:text="${location.longitude}"></td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    </div>
+                </div>
+        </section>
+        </div>
+    </body>
+</html>
