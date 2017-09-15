@@ -2,6 +2,7 @@ package com.boaheninc.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
+
 
 @Entity
 @Table
@@ -21,10 +23,15 @@ public class Location implements Serializable{/**
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
+	@Column
 	private String title;
+	@Column
 	private String description;
+	@Column
 	private String location;
+	@Column
 	private double latitude;
+	@Column
 	private double longitude;	
 
 }
